@@ -50,12 +50,12 @@
 
         /* Trang chủ */
         .home {
-            background: url('https://source.unsplash.com/1600x800/?vietnam,travel') no-repeat center/cover;
-            height: 400px;
+            background: url('https://c4.wallpaperflare.com/wallpaper/179/285/269/ha-long-bay-vietnam-wallpaper-preview.jpg') no-repeat center/cover;
+            height: 725px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: ghostwhite;
             font-size: 2.5em;
             font-weight: bold;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
@@ -65,7 +65,11 @@
         /* Giới thiệu */
         .about, .tours, .contact {
             padding: 40px 20px;
-            background: white;
+    background: linear-gradient(to right, ghostwhite, gray);
+}
+;
+}
+;
         }
 
         .about h2, .tours h2, .contact h2 {
@@ -88,12 +92,18 @@
         }
 
         .tour {
-            background: white;
+                              
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            
+            background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
+           
+            animation: gradientAnimation 6s infinite linear;
         }
-
+        
+        
+           
         .tour img {
             width: 100%;
             border-radius: 10px;
@@ -125,6 +135,7 @@
         .contact-form button:hover {
             background: #0056b3;
         }
+
     </style>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
@@ -141,7 +152,10 @@
     <!-- Nội dung chính -->
     <main id="content">
         <div class="home">Khám phá Việt Nam - Thiên đường du lịch 🌍🏝️</div>
+
     </main>
+   
+
 
     <!-- JavaScript điều hướng nội dung -->
     <script>
@@ -155,12 +169,11 @@
                 html = `
                     <div class="about">
                         <h2>Giới Thiệu</h2>
-                        <p>
-                            Việt Nam là điểm đến lý tưởng cho du khách yêu thích thiên nhiên và văn hóa.  
-                            Chúng tôi mang đến những hành trình đáng nhớ, từ biển đảo tuyệt đẹp đến những dãy núi hùng vĩ.  
-                            Hãy cùng khám phá những di sản văn hóa và vẻ đẹp bất tận của đất nước hình chữ S!
-                        </p>
+                       <p><strong><span style="color: red;">Việt Nam</span></strong> là điểm đến lý tưởng cho du khách yêu thích <strong>thiên nhiên và văn hóa</strong>. Chúng tôi mang đến những <strong>hành trình đáng nhớ, từ biển đảo tuyệt đẹp đến những dãy núi hùng vĩ</strong>. Hãy cùng khám phá những di sản văn hóa và vẻ đẹp bất tận của <strong><span style="color: red;">đất nước hình chữ S </span>
+</strong> 
+! 🇻🇳 </p>
 
+ 
 <img src="https://ik.imagekit.io/tvlk/blog/2024/07/canh-dep-viet-nam-3.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2" alt="Việt Nam đẹp">
         <h2>📌 Tại Sao Chọn Chúng Tôi?</h2>
         <ul style="text-align: left; max-width: 800px; margin: 0 auto;">
@@ -180,39 +193,39 @@
                                 <h3>Tour Vịnh Hạ Long</h3>
                                 <p>Hành trình khám phá kỳ quan thiên nhiên thế giới.</p>
             
-                    <a href="https://tptravel.com.vn/tour-ha-long-td786.html">Xem thêm</a>
+                    <a href="https://tptravel.com.vn/tour-ha-long-td786.html"><strong>Xem thêm</strong></a>
 
                             </div>
                             <div class="tour">
                                 <img src="https://mediaim.expedia.com/destination/2/159d40d55ca83c1ca2e1b4f5ec81f879.jpg" alt="Sapa">
                                 <h3>Tour Sapa</h3>
                                 <p>Chiêm ngưỡng cảnh sắc núi rừng Tây Bắc tuyệt đẹp.</p>
-                    <a href="https://dreamtravel.com.vn/du-lich-trong-nuoc/du-lich-sapa-3-ngay-2-dem-di-bang-o-to-tron-goi-2-150-000vnd-105-2072.html">Xem thêm</a>
+                    <a href="https://dreamtravel.com.vn/du-lich-trong-nuoc/du-lich-sapa-3-ngay-2-dem-di-bang-o-to-tron-goi-2-150-000vnd-105-2072.html"><strong>Xem thêm</strong></a>
     
                             </div>
                             <div class="tour">
                                 <img src="https://hoangphuan.com/wp-content/uploads/2024/07/butloti00edf7zs5prn8.webp" alt="Hội An">
                                 <h3>Tour Hội An</h3>
                                 <p>Trải nghiệm không khí và những công trình độc đáo.</p>
-                    <a href="https://www.dailytravel.vn/tour-hoi-an.html">Xem thêm</a>
+                    <a href="https://www.dailytravel.vn/tour-hoi-an.html"><strong>Xem thêm</strong></a>
                             </div>
                     <div class="tour">
                                 <img src="https://cdnen.thesaigontimes.vn/wp-content/uploads/2023/04/An-aerial-view-of-the-glittering-coastal-city-of-Nha-Trang.jpg" alt="Nha Tang">
                                 <h3>Tour Nha Trang</h3>
                                 <p>Trải nghiệm ẩm thực và tận hưởng sóng biển.</p>
-                    <a href="https://saigontourist.net/vi/tour/tour-nha-trang">Xem thêm</a>
+                    <a href="https://saigontourist.net/vi/tour/tour-nha-trang"><strong>Xem thêm</strong></a>
                             </div>
                     <div class="tour">
                                 <img src="https://honthom.sunworld.vn/wp-content/uploads/2024/02/hanh-trinh-phat-trien-cua-phu-quoc-8.jpg" alt="Phú Quốc">
                                 <h3>Tour Phú Quốc</h3>
                                 <p>Trải nghiệm và cảm nhận sóng biển từ 1 hòn đảo.</p>
-                    <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjF2u6ezraLAxUa5xYFHZ2UELYYABAAGgJ0bA&ae=2&aspm=1&co=1&ase=5&gclid=CjwKCAiAwaG9BhAREiwAdhv6Y0GK15gLa083LNgbxTxUCR7m3we4nMxSf3-34zW5at_ZKsg7ZoVeuRoCTvgQAvD_BwE&ohost=www.google.com&cid=CAESVeD273xWopOLCz2Id4tue9sMemFsp4uEFaVeYgqRvmwnktHXKKSXewVLEuLNbmKsp_ADU86eNBYl7GBKwVaEnDJNHiGjQrntGUkEGDpNutc8YLX2ofU&sig=AOD64_1ZFe_quu6N97sFLXOPs5kh13UJ0g&q&adurl&ved=2ahUKEwiZpOiezraLAxWEsFYBHUFuFNsQ0Qx6BAgLEAE">Xem thêm</a>
+                    <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjF2u6ezraLAxUa5xYFHZ2UELYYABAAGgJ0bA&ae=2&aspm=1&co=1&ase=5&gclid=CjwKCAiAwaG9BhAREiwAdhv6Y0GK15gLa083LNgbxTxUCR7m3we4nMxSf3-34zW5at_ZKsg7ZoVeuRoCTvgQAvD_BwE&ohost=www.google.com&cid=CAESVeD273xWopOLCz2Id4tue9sMemFsp4uEFaVeYgqRvmwnktHXKKSXewVLEuLNbmKsp_ADU86eNBYl7GBKwVaEnDJNHiGjQrntGUkEGDpNutc8YLX2ofU&sig=AOD64_1ZFe_quu6N97sFLXOPs5kh13UJ0g&q&adurl&ved=2ahUKEwiZpOiezraLAxWEsFYBHUFuFNsQ0Qx6BAgLEAE"><strong>Xem thêm</strong></a>
                             </div>
                     <div class="tour">
                                 <img src="https://hoangphuan.com/wp-content/uploads/2024/05/5057SYcmauYaNYng-MaiThanhChYYng1.jpg" alt="Đà Nẵng">
                                 <h3>Tour Đà Nẵng</h3>
                                 <p>Trải nghiệm không khí và những công trình độc đáo.</p>
-                     <a href="https://danangbest.com/tour-du-lich-da-nang-gia-re.html">Xem thêm</a>
+                     <a href="https://danangbest.com/tour-du-lich-da-nang-gia-re.html"><strong>Xem thêm</strong></a>
                             </div>
                         </div>
                     </div>
