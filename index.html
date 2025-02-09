@@ -5,162 +5,204 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Du Lịch Việt Nam</title>
     <style>
+        /* Định dạng chung */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #fafafa;
-            line-height: 1.6;
-        }
-        header {
-            background: #3498db;
-            color: white;
-            padding: 20px 0;
+            padding-top: 60px; /* Đẩy nội dung xuống để tránh bị che */
             text-align: center;
+            background-color: #f5f5f5;
         }
-        nav {
-            background-color: #2c3e50;
-            text-align: center;
-            padding: 10px 0;
-        }
-        nav a {
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            font-size: 18px;
-            transition: background-color 0.3s ease;
-            display: inline-block;
-        }
-        nav a:hover {
-            background-color: #3498db;
-        }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            padding: 10px;
-        }
-        .card img {
+
+        /* Taskbar */
+        .taskbar {
+            display: flex;
+            justify-content: space-around;
+            background: #007bff;
+            padding: 15px;
+            position: fixed;
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            top: 0;
+            left: 0;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
-        .card h3 {
-            color: #2980b9;
-            font-size: 22px;
-            margin: 10px 0;
-        }
-        .card p {
-            font-size: 16px;
-            color: #7f8c8d;
-        }
-        .card a {
-            display: inline-block;
-            padding: 10px 15px;
-            background: #3498db;
+
+        .taskbar a {
             color: white;
             text-decoration: none;
+            padding: 10px 15px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .taskbar a:hover {
+            background: #0056b3;
             border-radius: 5px;
-            margin-top: 10px;
         }
-        .card a:hover {
-            background: #217dbb;
+
+        .taskbar i {
+            margin-right: 8px;
         }
-        .intro {
-            text-align: center;
+
+        /* Trang chủ */
+        .home {
+            background: url('https://source.unsplash.com/1600x800/?vietnam,travel') no-repeat center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+            padding: 20px;
+        }
+
+        /* Giới thiệu */
+        .about, .tours, .contact {
             padding: 40px 20px;
             background: white;
-            margin: 20px auto;
+        }
+
+        .about h2, .tours h2, .contact h2 {
+            color: #007bff;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* Tour Du Lịch */
+        .tour-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
             max-width: 1000px;
+            margin: auto;
+        }
+
+        .tour {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
         }
-        .show {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-        .rainbow-bar {
-            position: fixed;
-            bottom: 0;
+
+        .tour img {
             width: 100%;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 14px;
-            font-weight: bold;
-            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-            background-size: 400% 400%;
-            color: white;
-            animation: rainbow 3s infinite linear;
+            border-radius: 10px;
         }
-        @keyframes rainbow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+
+        /* Liên hệ */
+        .contact-form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background: #0056b3;
         }
     </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <h1>Du Lịch Việt Nam</h1>
-    </header>
-    <nav>
-        <a href="index.html">Trang Chủ</a>
-        <a href="test1.html">Địa Điểm Du Lịch</a>
-        <a href="123.html">Liên Hệ</a>
-    </nav>
-    <section class="intro" id="intro">
-        <h2>Chào Mừng Đến Với Du Lịch Việt Nam</h2>
-        <p>Khám phá vẻ đẹp thiên nhiên và văn hóa đa dạng của đất nước Việt Nam.</p>
-    </section>
-    <div class="container">
-        <div class="card">
-            <img src="https://static-images.vnncdn.net/files/publish/2022/7/27/ha-long-bay-1-852.jpg" alt="Vịnh Hạ Long">
-            <h3>Vịnh Hạ Long</h3>
-            <p>Kỳ quan thiên nhiên thế giới với những hòn đảo đá vôi hùng vĩ.</p>
-            <a href="#">Xem thêm</a>
-        </div>
-        <div class="card">
-            <img src="https://images2.thanhnien.vn/528068263637045248/2023/4/4/hoi-an-1680591517857660432696.jpg" alt="Hội An">
-            <h3>Hội An</h3>
-            <p>Thành phố cổ với đèn lồng rực rỡ và kiến trúc độc đáo.</p>
-            <a href="#">Xem thêm</a>
-        </div>
-        <div class="card">
-            <img src="https://digishop.vnpt.vn/digitalShop/images/news/1701250627937xanh%20sapa.jpg" alt="Sapa">
-            <h3>Sapa</h3>
-            <p>Thiên nhiên kỳ vĩ với ruộng bậc thang và văn hóa dân tộc.</p>
-            <a href="#">Xem thêm</a>
-        </div>
+
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <a href="#" onclick="showContent('trang-chu')"><i class="fas fa-home"></i>Trang chủ</a>
+        <a href="#" onclick="showContent('gioi-thieu')"><i class="fas fa-info-circle"></i>Giới thiệu</a>
+        <a href="#" onclick="showContent('tour-du-lich')"><i class="fas fa-map-marked-alt"></i>Tour du lịch</a>
+        <a href="#" onclick="showContent('lien-he')"><i class="fas fa-phone-alt"></i>Liên hệ</a>
     </div>
-    <div class="rainbow-bar">
-        MÍT TƠ BÍT CŨNG ĐÃ ĐI CÒN BẠN?
-    </div>
+
+    <!-- Nội dung chính -->
+    <main id="content">
+        <div class="home">Khám phá Việt Nam - Thiên đường du lịch 🌍🏝️</div>
+    </main>
+
+    <!-- JavaScript điều hướng nội dung -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let intro = document.getElementById("intro");
-            function checkPosition() {
-                let position = intro.getBoundingClientRect().top;
-                let screenHeight = window.innerHeight;
-                if (position < screenHeight - 100) {
-                    intro.classList.add("show");
-                }
+        function showContent(page) {
+            let content = document.getElementById("content");
+            let html = "";
+
+            if (page === "trang-chu") {
+                html = `<div class="home">Khám phá Việt Nam - Thiên đường du lịch 🌍🏝️</div>`;
+            } else if (page === "gioi-thieu") {
+                html = `
+                    <div class="about">
+                        <h2>Giới Thiệu</h2>
+                        <p>
+                            Việt Nam là điểm đến lý tưởng cho du khách yêu thích thiên nhiên và văn hóa.  
+                            Chúng tôi mang đến những hành trình đáng nhớ, từ biển đảo tuyệt đẹp đến những dãy núi hùng vĩ.  
+                            Hãy cùng khám phá những di sản văn hóa và vẻ đẹp bất tận của đất nước hình chữ S!
+                        </p>
+                    </div>
+                `;
+            } else if (page === "tour-du-lich") {
+                html = `
+                    <div class="tours">
+                        <h2>🌍 Các Tour Du Lịch Nổi Bật</h2>
+                        <div class="tour-list">
+                            <div class="tour">
+                                <img src="https://source.unsplash.com/300x200/?halongbay" alt="Vịnh Hạ Long">
+                                <h3>Tour Vịnh Hạ Long</h3>
+                                <p>Hành trình khám phá kỳ quan thiên nhiên thế giới.</p>
+                            </div>
+                            <div class="tour">
+                                <img src="https://source.unsplash.com/300x200/?sapa" alt="Sapa">
+                                <h3>Tour Sapa</h3>
+                                <p>Chiêm ngưỡng cảnh sắc núi rừng Tây Bắc tuyệt đẹp.</p>
+                            </div>
+                            <div class="tour">
+                                <img src="https://source.unsplash.com/300x200/?danang" alt="Đà Nẵng">
+                                <h3>Tour Đà Nẵng</h3>
+                                <p>Trải nghiệm biển xanh và những cây cầu độc đáo.</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (page === "lien-he") {
+                html = `
+                    <div class="contact">
+                        <h2>Liên Hệ</h2>
+                        <p>Gửi yêu cầu tư vấn hoặc đặt tour ngay hôm nay!</p>
+                        <div class="contact-form">
+                            <input type="text" placeholder="Họ và tên" required>
+                            <input type="email" placeholder="Email" required>
+                            <textarea placeholder="Lời nhắn" rows="4" required></textarea>
+                            <button type="submit">Gửi</button>
+                        </div>
+                    </div>
+                `;
             }
-            window.addEventListener("scroll", checkPosition);
-            checkPosition();
-        });
+
+            content.innerHTML = html;
+        }
     </script>
+
 </body>
 </html>
